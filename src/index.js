@@ -1,4 +1,4 @@
-/**
+/*
  * LightningChart® example code: Demo shows how to draw multiple layered area series.
  * If you need any assistance, or notice error in this example code, please contact support@arction.com. 
  * 

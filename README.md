@@ -1,4 +1,4 @@
-# Area bipolar
+# Area Bipolar
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
@@ -14,7 +14,8 @@ The demo can be used as an example or a seed project. Local execution requires t
 
 - The application is available at *http://localhost:8080* in your browser, webpack-dev-server provides hot reload functionality.
 
-### Description 
+
+## Description
 
 *Also known as a Area Graph, Area Chart or Area Chart with Negative values*
 
@@ -53,15 +54,16 @@ series.add([
 ])
 ```
 
-### API links
 
-* XY cartesian chart: [ChartXY][]
-* Area series: [AreaSeries][]
-* Area type: [AreaSeriesTypes][]
-* Bipolar Area series: [AreaSeriesBipolar][]
+## API Links
+
+* XY cartesian chart: [ChartXY]
+* Area series: [AreaSeries]
+* Area type: [AreaSeriesTypes]
+* Bipolar Area series: [AreaSeriesBipolar]
 
 
-### Support
+## Support
 
 If you notice an error in the example code, please open an issue on [GitHub][0] repository of the entire example.
 
@@ -73,15 +75,17 @@ If you think you found a bug in the LightningChart JavaScript library, please co
 
 Direct developer email support can be purchased through a [Support Plan][4] or by contacting sales@arction.com.
 
-© Arction Ltd 2009-2019. All rights reserved.
-
 [0]: https://github.com/Arction/
 [1]: https://www.arction.com/lightningchart-js-api-documentation/
 [2]: https://www.arction.com
 [3]: https://stackoverflow.com/questions/tagged/lightningchart
 [4]: https://www.arction.com/support-services/
 
-[AreaSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/chartxy.html#addareaseries
-[AreaSeriesBipolar]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/areaseriesbipolar.html
-[AreaSeriesTypes]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#areaseriestypes
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/chartxy.html
+© Arction Ltd 2009-2019. All rights reserved.
+
+
+[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/chartxy.html
+[AreaSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/chartxy.html#addareaseries
+[AreaSeriesTypes]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/globals.html#areaseriestypes
+[AreaSeriesBipolar]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/areaseriesbipolar.html
+
