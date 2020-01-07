@@ -28,7 +28,7 @@ const xyChart = lightningChart()
     .setTitle('Company growth in comparison to static baseline')
     .setAutoCursorMode(AutoCursorModes.onHover)
 
-// get yaxis titile
+// set y-axis title
 const axisY = xyChart.getDefaultAxisY()
     .setTitle('Growth %')
     .setScrollStrategy(AxisScrollStrategies.progressive)
@@ -89,7 +89,7 @@ let areaBipolarData = [
     { x: 51, y: 30 }
 ]
 const dataFrequency = 1000 * 60 * 60 * 24 * 7
-// Add dinamic bipolar Area Series.
+// Add dynamic bipolar Area Series.
 const areaBipolar = xyChart.addAreaSeries({ baseline: 40, type: AreaSeriesTypes.Bipolar })
     .setCursorInterpolationEnabled(false)
     .setResultTableFormatter((builder, series, position, high, low) => builder
