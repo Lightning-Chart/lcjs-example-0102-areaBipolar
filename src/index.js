@@ -14,19 +14,20 @@ const {
     AreaSeriesTypes,
     AxisScrollStrategies,
     AxisTickStrategies,
-    AutoCursorModes
+    AutoCursorModes,
+    Themes
 } = lcjs
 
 // Decide on an origin for DateTime axis.
 const dateOrigin = new Date(2017, 0, 1)
 
 // Create a XY Chart.
-const xyChart = lightningChart()
-    .ChartXY({
-        defaultAxisXTickStrategy: AxisTickStrategies.DateTime(dateOrigin),
-    })
-    .setTitle('Company growth in comparison to static baseline')
-    .setAutoCursorMode(AutoCursorModes.onHover)
+const xyChart = lightningChart().ChartXY({
+    // theme: Themes.dark
+})
+xyChart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime, (tickStrategy) => tickStrategy.setDateOrigin(dateOrigin))
+xyChart.setTitle('Company growth in comparison to static baseline')
+xyChart.setAutoCursorMode(AutoCursorModes.onHover)
 
 // set y-axis title
 const axisY = xyChart.getDefaultAxisY()

@@ -59,10 +59,10 @@ series.add([
 
 ## API Links
 
-* XY cartesian chart: [ChartXY]
-* Area series: [AreaSeries]
-* Area type: [AreaSeriesTypes]
-* Bipolar Area series: [AreaSeriesBipolar]
+* [XY cartesian chart]
+* [Area series]
+* [Area type]
+* [Bipolar Area series]
 
 
 ## Support
@@ -86,8 +86,8 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/chartxy.html
-[AreaSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/chartxy.html#addareaseries
-[AreaSeriesTypes]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#areaseriestypes
-[AreaSeriesBipolar]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/areaseriesbipolar.html
+[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/chartxy.html
+[Area series]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/chartxy.html#addareaseries
+[Area type]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#areaseriestypes
+[Bipolar Area series]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/areaseriesbipolar.html
 
