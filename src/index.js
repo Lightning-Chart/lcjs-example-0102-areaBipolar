@@ -93,7 +93,7 @@ const dataFrequency = 1000 * 60 * 60 * 24 * 7
 // Add dynamic bipolar Area Series.
 const areaBipolar = xyChart.addAreaSeries({ baseline: 40, type: AreaSeriesTypes.Bipolar })
     .setCursorInterpolationEnabled(false)
-    .setResultTableFormatter((builder, series, position, high, low) => builder
+    .setCursorResultTableFormatter((builder, series, position, high, low) => builder
         .addRow(series.getName())
         .addRow('Date:', series.axisX.formatValue(position))
         .addRow('Growth:', series.axisY.formatValue(high), '%')
