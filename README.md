@@ -1,6 +1,6 @@
-# Area Bipolar
+# Area Bipolar JavaScript Chart
 
-![Area Bipolar](areaBipolar.png)
+![Area Bipolar JavaScript Chart](areaBipolar.png)
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
