@@ -23,7 +23,7 @@ const dateOrigin = new Date(2017, 0, 1)
 
 // Create a XY Chart.
 const xyChart = lightningChart().ChartXY({
-    // theme: Themes.dark
+    // theme: Themes.darkGold
 })
 xyChart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime, (tickStrategy) => tickStrategy.setDateOrigin(dateOrigin))
 xyChart.setTitle('Company growth in comparison to static baseline')
