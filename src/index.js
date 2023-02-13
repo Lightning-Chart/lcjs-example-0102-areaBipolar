@@ -1,22 +1,15 @@
 /*
  * LightningChart® example code: Demo shows how to draw multiple layered area series.
- * If you need any assistance, or notice error in this example code, please contact support@arction.com. 
- * 
- * http://www.arction.com | support@arction.com | sales@arction.com
- * © Arction Ltd 2009-2019. All rights reserved.  
+ * If you need any assistance, or notice error in this example code, please contact support@lightningchart.com.
+ *
+ * http://www.lightningchart.com | support@lightningchart.com | sales@lightningchart.com
+ * © LightningChart Ltd 2009-2019. All rights reserved.
  */
 // Import LightningChartJS
 const lcjs = require('@arction/lcjs')
 
 // Extract required parts from LightningChartJS.
-const {
-    lightningChart,
-    AreaSeriesTypes,
-    AxisScrollStrategies,
-    AxisTickStrategies,
-    AutoCursorModes,
-    Themes
-} = lcjs
+const { lightningChart, AreaSeriesTypes, AxisScrollStrategies, AxisTickStrategies, AutoCursorModes, Themes } = lcjs
 
 // Decide on an origin for DateTime axis.
 const dateOrigin = new Date(2017, 0, 1)
@@ -30,10 +23,11 @@ xyChart.setTitle('Company growth in comparison to static baseline')
 xyChart.setAutoCursorMode(AutoCursorModes.onHover)
 
 // set y-axis title
-const axisY = xyChart.getDefaultAxisY()
+const axisY = xyChart
+    .getDefaultAxisY()
     .setTitle('Growth %')
     .setScrollStrategy(AxisScrollStrategies.progressive)
-    .setInterval(0, 80)
+    .setInterval({ start: 0, end: 80, stopAxisAfter: false })
 
 let areaBipolarData = [
     { x: 0, y: 12 },
@@ -87,16 +81,18 @@ let areaBipolarData = [
     { x: 48, y: 31 },
     { x: 49, y: 40 },
     { x: 50, y: 11 },
-    { x: 51, y: 30 }
+    { x: 51, y: 30 },
 ]
 const dataFrequency = 1000 * 60 * 60 * 24 * 7
 // Add dynamic bipolar Area Series.
-const areaBipolar = xyChart.addAreaSeries({ baseline: 40, type: AreaSeriesTypes.Bipolar })
+const areaBipolar = xyChart
+    .addAreaSeries({ baseline: 40, type: AreaSeriesTypes.Bipolar })
     .setCursorInterpolationEnabled(false)
-    .setCursorResultTableFormatter((builder, series, position, high, low) => builder
-        .addRow(series.getName())
-        .addRow('Date:', series.axisX.formatValue(position))
-        .addRow('Growth:', series.axisY.formatValue(high), '%')
+    .setCursorResultTableFormatter((builder, series, position, high, low) =>
+        builder
+            .addRow(series.getName())
+            .addRow('Date:', series.axisX.formatValue(position))
+            .addRow('Growth:', series.axisY.formatValue(high), '%'),
     )
 
-areaBipolar.add(areaBipolarData.map(point => ({ x: point.x * dataFrequency, y: point.y })))
+areaBipolar.add(areaBipolarData.map((point) => ({ x: point.x * dataFrequency, y: point.y })))
