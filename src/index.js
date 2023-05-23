@@ -18,7 +18,14 @@ const dateOrigin = new Date(2017, 0, 1)
 const xyChart = lightningChart().ChartXY({
     // theme: Themes.darkGold
 })
-xyChart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime, (tickStrategy) => tickStrategy.setDateOrigin(dateOrigin))
+// Use DateTime TickStrategy and set the interval
+xyChart.getDefaultAxisX()
+    .setTickStrategy(AxisTickStrategies.DateTime)
+    .setInterval({
+        start: new Date(2017, 0, 1).getTime(),
+        end: new Date(2017, 11, 26).getTime()
+    })
+
 xyChart.setTitle('Company growth in comparison to static baseline')
 xyChart.setAutoCursorMode(AutoCursorModes.onHover)
 
@@ -30,60 +37,60 @@ const axisY = xyChart
     .setInterval({ start: 0, end: 80, stopAxisAfter: false })
 
 let areaBipolarData = [
-    { x: 0, y: 12 },
-    { x: 1, y: 71 },
-    { x: 2, y: 24 },
-    { x: 3, y: 39 },
-    { x: 4, y: 24 },
-    { x: 5, y: 10 },
-    { x: 6, y: 58 },
-    { x: 7, y: 10 },
-    { x: 8, y: 74 },
-    { x: 9, y: 23 },
-    { x: 10, y: 19 },
-    { x: 11, y: 25 },
-    { x: 12, y: 51 },
-    { x: 13, y: 20 },
-    { x: 14, y: 40 },
-    { x: 15, y: 50 },
-    { x: 16, y: 26 },
-    { x: 17, y: 72 },
-    { x: 18, y: 39 },
-    { x: 19, y: 49 },
-    { x: 20, y: 22 },
-    { x: 21, y: 21 },
-    { x: 22, y: 36 },
-    { x: 23, y: 73 },
-    { x: 24, y: 67 },
-    { x: 25, y: 53 },
-    { x: 26, y: 8 },
-    { x: 27, y: 7 },
-    { x: 28, y: 71 },
-    { x: 29, y: 29 },
-    { x: 30, y: 56 },
-    { x: 31, y: 18 },
-    { x: 32, y: 15 },
-    { x: 33, y: 9 },
-    { x: 34, y: 29 },
-    { x: 35, y: 64 },
-    { x: 36, y: 44 },
-    { x: 37, y: 62 },
-    { x: 38, y: 70 },
-    { x: 39, y: 19 },
-    { x: 40, y: 55 },
-    { x: 41, y: 15 },
-    { x: 42, y: 48 },
-    { x: 43, y: 23 },
-    { x: 44, y: 51 },
-    { x: 45, y: 51 },
-    { x: 46, y: 64 },
-    { x: 47, y: 15 },
-    { x: 48, y: 31 },
-    { x: 49, y: 40 },
-    { x: 50, y: 11 },
-    { x: 51, y: 30 },
+    { x: new Date(2017, 0, 2).getTime(), y: 12 },
+    { x: new Date(2017, 0, 9).getTime(), y: 71 },
+    { x: new Date(2017, 0, 16).getTime(), y: 24 },
+    { x: new Date(2017, 0, 23).getTime(), y: 39 },
+    { x: new Date(2017, 0, 30).getTime(), y: 24 },
+    { x: new Date(2017, 1, 6).getTime(), y: 10 },
+    { x: new Date(2017, 1, 13).getTime(), y: 58 },
+    { x: new Date(2017, 1, 20).getTime(), y: 10 },
+    { x: new Date(2017, 1, 27).getTime(), y: 74 },
+    { x: new Date(2017, 2, 6).getTime(), y: 23 },
+    { x: new Date(2017, 2, 13).getTime(), y: 19 },
+    { x: new Date(2017, 2, 20).getTime(), y: 25 },
+    { x: new Date(2017, 2, 27).getTime(), y: 51 },
+    { x: new Date(2017, 3, 3).getTime(), y: 20 },
+    { x: new Date(2017, 3, 10).getTime(), y: 40 },
+    { x: new Date(2017, 3, 17).getTime(), y: 50 },
+    { x: new Date(2017, 3, 24).getTime(), y: 26 },
+    { x: new Date(2017, 4, 1).getTime(), y: 72 },
+    { x: new Date(2017, 4, 8).getTime(), y: 39 },
+    { x: new Date(2017, 4, 15).getTime(), y: 49 },
+    { x: new Date(2017, 4, 22).getTime(), y: 22 },
+    { x: new Date(2017, 4, 29).getTime(), y: 21 },
+    { x: new Date(2017, 5, 5).getTime(), y: 36 },
+    { x: new Date(2017, 5, 12).getTime(), y: 73 },
+    { x: new Date(2017, 5, 19).getTime(), y: 67 },
+    { x: new Date(2017, 5, 26).getTime(), y: 53 },
+    { x: new Date(2017, 6, 3).getTime(), y: 8 },
+    { x: new Date(2017, 6, 10).getTime(), y: 7 },
+    { x: new Date(2017, 6, 17).getTime(), y: 71 },
+    { x: new Date(2017, 6, 24).getTime(), y: 29 },
+    { x: new Date(2017, 6, 31).getTime(), y: 56 },
+    { x: new Date(2017, 7, 7).getTime(), y: 18 },
+    { x: new Date(2017, 7, 14).getTime(), y: 15 },
+    { x: new Date(2017, 7, 21).getTime(), y: 9 },
+    { x: new Date(2017, 7, 28).getTime(), y: 29 },
+    { x: new Date(2017, 8, 4).getTime(), y: 64 },
+    { x: new Date(2017, 8, 11).getTime(), y: 44 },
+    { x: new Date(2017, 8, 18).getTime(), y: 62 },
+    { x: new Date(2017, 8, 25).getTime(), y: 70 },
+    { x: new Date(2017, 9, 2).getTime(), y: 19 },
+    { x: new Date(2017, 9, 9).getTime(), y: 55 },
+    { x: new Date(2017, 9, 16).getTime(), y: 15 },
+    { x: new Date(2017, 9, 23).getTime(), y: 48 },
+    { x: new Date(2017, 9, 30).getTime(), y: 23 },
+    { x: new Date(2017, 10, 6).getTime(), y: 51 },
+    { x: new Date(2017, 10, 13).getTime(), y: 51 },
+    { x: new Date(2017, 10, 20).getTime(), y: 64 },
+    { x: new Date(2017, 10, 27).getTime(), y: 15 },
+    { x: new Date(2017, 11, 4).getTime(), y: 31 },
+    { x: new Date(2017, 11, 11).getTime(), y: 40 },
+    { x: new Date(2017, 11, 18).getTime(), y: 11 },
+    { x: new Date(2017, 11, 25).getTime(), y: 30 },
 ]
-const dataFrequency = 1000 * 60 * 60 * 24 * 7
+
 // Add dynamic bipolar Area Series.
 const areaBipolar = xyChart
     .addAreaSeries({ baseline: 40, type: AreaSeriesTypes.Bipolar })
@@ -95,4 +102,4 @@ const areaBipolar = xyChart
             .addRow('Growth:', series.axisY.formatValue(high), '%'),
     )
 
-areaBipolar.add(areaBipolarData.map((point) => ({ x: point.x * dataFrequency, y: point.y })))
+areaBipolar.add(areaBipolarData)
