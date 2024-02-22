@@ -1,8 +1,8 @@
 /*
  * LightningChart® example code: Demo shows how to draw multiple layered area series.
- * If you need any assistance, or notice error in this example code, please contact support@lightningchart.com.
+ * If you need any assistance, or notice error in this example code, please contact sales@lightningchart.com.
  *
- * http://www.lightningchart.com | support@lightningchart.com | sales@lightningchart.com
+ * http://www.lightningchart.com | sales@lightningchart.com
  * © LightningChart Ltd 2009-2019. All rights reserved.
  */
 // Import LightningChartJS
@@ -19,11 +19,12 @@ const xyChart = lightningChart().ChartXY({
     // theme: Themes.darkGold
 })
 // Use DateTime TickStrategy and set the interval
-xyChart.getDefaultAxisX()
+xyChart
+    .getDefaultAxisX()
     .setTickStrategy(AxisTickStrategies.DateTime)
     .setInterval({
         start: new Date(2017, 0, 1).getTime(),
-        end: new Date(2017, 11, 26).getTime()
+        end: new Date(2017, 11, 26).getTime(),
     })
 
 xyChart.setTitle('Company growth in comparison to static baseline')
@@ -34,7 +35,7 @@ const axisY = xyChart
     .getDefaultAxisY()
     .setTitle('Growth %')
     .setScrollStrategy(AxisScrollStrategies.progressive)
-    .setInterval({ start: 0, end: 80, stopAxisAfter: false })
+    .setDefaultInterval((state) => ({ end: state.dataMax, start: (state.dataMax ?? 0) - 80, stopAxisAfter: false }))
 
 let areaBipolarData = [
     { x: new Date(2017, 0, 2).getTime(), y: 12 },
