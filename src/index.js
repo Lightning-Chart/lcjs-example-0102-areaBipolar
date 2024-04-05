@@ -15,7 +15,9 @@ const { lightningChart, AreaSeriesTypes, AxisScrollStrategies, AxisTickStrategie
 const dateOrigin = new Date(2017, 0, 1)
 
 // Create a XY Chart.
-const xyChart = lightningChart().ChartXY({
+const xyChart = lightningChart({
+            resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
+        }).ChartXY({
     theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
 })
 // Use DateTime TickStrategy and set the interval
