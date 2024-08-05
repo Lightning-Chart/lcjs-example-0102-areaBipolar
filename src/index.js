@@ -6,7 +6,7 @@
  * © LightningChart Ltd 2009-2019. All rights reserved.
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
 const { lightningChart, AreaSeriesTypes, AxisScrollStrategies, AxisTickStrategies, AutoCursorModes, Themes } = lcjs
@@ -30,12 +30,12 @@ xyChart
     })
 
 xyChart.setTitle('Company growth in comparison to static baseline')
-xyChart.setAutoCursorMode(AutoCursorModes.onHover)
 
 // set y-axis title
 const axisY = xyChart
     .getDefaultAxisY()
-    .setTitle('Growth %')
+    .setTitle('Growth')
+    .setUnits('%')
     .setScrollStrategy(AxisScrollStrategies.progressive)
     .setDefaultInterval((state) => ({ end: state.dataMax, start: (state.dataMax ?? 0) - 80, stopAxisAfter: false }))
 
@@ -95,14 +95,7 @@ let areaBipolarData = [
 ]
 
 // Add dynamic bipolar Area Series.
-const areaBipolar = xyChart
-    .addAreaSeries({ baseline: 40, type: AreaSeriesTypes.Bipolar })
-    .setCursorInterpolationEnabled(false)
-    .setCursorResultTableFormatter((builder, series, position, high, low) =>
-        builder
-            .addRow(series.getName())
-            .addRow('Date:', series.axisX.formatValue(position))
-            .addRow('Growth:', series.axisY.formatValue(high), '%'),
-    )
+const areaBipolar = xyChart.addAreaSeries({ baseline: 40, type: AreaSeriesTypes.Bipolar })
+
 
 areaBipolar.add(areaBipolarData)
