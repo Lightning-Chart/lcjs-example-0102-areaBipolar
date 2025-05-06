@@ -89,8 +89,8 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/classes/ChartXY.html
-[Area series]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/classes/ChartXY.html#addAreaSeries
-[Area type]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/AreaSeriesTypes.html
-[Bipolar Area series]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/classes/AreaSeriesBipolar.html
+[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/ChartXY.html
+[Area series]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/ChartXY.html#addAreaSeries
+[Area type]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/AreaSeriesTypes.html
+[Bipolar Area series]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/AreaSeriesBipolar.html
 
