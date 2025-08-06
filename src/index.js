@@ -18,6 +18,7 @@ const dateOrigin = new Date(2017, 0, 1)
 const xyChart = lightningChart({
             resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
         }).ChartXY({
+	legend: { visible: false },
     theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
 })
 // Use DateTime TickStrategy and set the interval
@@ -36,7 +37,7 @@ const axisY = xyChart
     .getDefaultAxisY()
     .setTitle('Growth')
     .setUnits('%')
-    .setScrollStrategy(AxisScrollStrategies.progressive)
+    .setScrollStrategy(AxisScrollStrategies.scrolling)
     .setDefaultInterval((state) => ({ end: state.dataMax, start: (state.dataMax ?? 0) - 80, stopAxisAfter: false }))
 
 let areaBipolarData = [
@@ -97,5 +98,4 @@ let areaBipolarData = [
 // Add dynamic bipolar Area Series.
 const areaBipolar = xyChart.addAreaSeries({ baseline: 40, type: AreaSeriesTypes.Bipolar })
 
-
-areaBipolar.add(areaBipolarData)
+areaBipolar.appendJSON(areaBipolarData)
