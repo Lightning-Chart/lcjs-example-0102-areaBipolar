@@ -40,19 +40,19 @@ const areaBipolar = chart.addAreaSeries({
 
 The baseline value the type of number and the type can be specified only during the creation of a series instance, where
 
--   The baseline is a fixed reference level of minimum or starting point used for comparisons, which allow customizing the position of the area.
+- The baseline is a fixed reference level of minimum or starting point used for comparisons, which allow customizing the position of the area.
 
--   The type of area series is an enum selector which defines the type of area series:
-    -   Select AreaSeriesTypes.Both to show the data from both sides of the baseline.
+- The type of area series is an enum selector which defines the type of area series:
+    - Select AreaSeriesTypes.Both to show the data from both sides of the baseline.
 
 The series accepts points in format `{ x: number, y: number }`. Any number of points can be added with a single call.
 
 ```javascript
 // Single point.
-series.add({ x: 50, y: 60 })
+series.appendJSON({ x: 50, y: 60 })
 
 // Multiple points at once.
-series.add([
+series.appendJSON([
     { x: 55, y: 60 },
     { x: 60, y: 62 },
     { x: 65, y: 65 },
@@ -88,7 +88,7 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2026. All rights reserved.
 
 
-[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v8.3.0/classes/ChartXY.html
-[Area series]: https://lightningchart.com/js-charts/api-documentation/v8.3.0/classes/ChartXY.html#addAreaSeries
-[Bipolar Area series]: https://lightningchart.com/js-charts/api-documentation/v8.3.0/classes/PointLineAreaSeries.html
+[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v9.0.0/classes/ChartXY.html
+[Area series]: https://lightningchart.com/js-charts/api-documentation/v9.0.0/classes/ChartXY.html#addAreaSeries
+[Bipolar Area series]: https://lightningchart.com/js-charts/api-documentation/v9.0.0/classes/PointLineAreaSeries.html
 
